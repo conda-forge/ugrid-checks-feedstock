@@ -1,5 +1,5 @@
 {% set name = "ugrid-checks" %}
-{% set version = "0.1.1" %}
+{% set version = "0.1.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 31dfba5753f0152301b3caf0e1c1955eef2a1c6b64a6ee6720fcd7396d232688
+  sha256: df4ddbfd265a88c46c375a3dc607649034ca002068c8c6aeeb8bc6b80fadc0e9
 
 build:
   number: 0
