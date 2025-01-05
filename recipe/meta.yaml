@@ -6,11 +6,11 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: ef87be311794c664f7d505c7ace20ffffd32078f8098f5f981320351ab5a1040
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
   entry_points:
@@ -18,14 +18,16 @@ build:
 
 requirements:
   host:
-    - python >=3.7
+    - python {{ python_min }}
     - pip
     - setuptools >=45
   run:
-    - python >=3.7
+    - python >={{ python_min }}
     - netCDF4
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - ugrid_checks
   commands:
